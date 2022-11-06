@@ -1,5 +1,6 @@
 from tkinter import *
 root = Tk()
+root.title('Screen printer')
 
 cords=[]
 buttons=[]
@@ -19,7 +20,6 @@ for i in range(5):
 def cords_button(c_button):
     comp = 0
     buttons[c_button[1]].configure(bg="grey")
-    #print(dic[button])
     for i in range(len(cords)): # sert à éviter les duplications dans cords
         if cords[i] == c_button[0]:
             comp = 1
@@ -53,14 +53,14 @@ def returner(*args):
 
 
 value = StringVar()
-scale = Scale(root,orient="horizontal", from_=1,to=9,label="BRIGHT",length=60,variable=value)
-compil=Button(root, text="COMPILE", bg="purple",width=2,height=2,padx=20,command=compileur)
-clear=Button(root, text="CLEAR", bg="red",width=2,height=2,padx=20,command=clear_cords)
-scale.grid(column=1,row=5)
+scale = Scale(root,orient="horizontal", from_=1,to=9,label="LUM",length=80,variable=value)
+compil=Button(root, text="CMPL", bg="purple",width=2,height=2,padx=20,command=compileur)
+clear=Button(root, text="CLR", bg="red",width=2,height=2,padx=20,command=clear_cords)
+scale.grid(column=0,row=5)
 compil.grid(column=2,row=5)
 clear.grid(column=3,row=5)
 
-
-
-root.mainloop()
+    
+if __name__=='__main__':
+    root.mainloop()
 
